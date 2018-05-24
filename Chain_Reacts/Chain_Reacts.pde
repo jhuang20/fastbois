@@ -5,6 +5,7 @@ void setup() {
   for (int i=0; i<ballArray.length; i++) {
     ballArray[i] = new Ball();
   }
+  mouseClicked();
 }
 
 void draw() {
@@ -13,4 +14,10 @@ void draw() {
     ballArray[i].drawBall();
     ballArray[i].moveBall();
   }
+  
+}
+
+void mouseClicked() {
+  Ball b = new Ball(mouseX, mouseY);
+  b.drawBall();
 }
