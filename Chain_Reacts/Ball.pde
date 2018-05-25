@@ -44,7 +44,29 @@ class Ball {
   }
 
   void drawBall() {
+    
+    if(this.state==1) {
+        if(rad==MAX_RADIUS) {
+          this.state=2;
+        }
+        fill(ballColor);
+        ellipse(xpos,ypos,rad,rad);
+        
+        rad+=CHANGE_FACTOR;
+      }
+     else if(state==2) {
+       if(rad<0) {
+         state=3;
+       }
+       fill(ballColor);
+        ellipse(xpos,ypos,rad,rad);
+        
+        rad-=CHANGE_FACTOR;
+     }
+    else {
     fill(ballColor);
     ellipse(xpos, ypos, rad, rad);
+    
+    }
   }
 }
